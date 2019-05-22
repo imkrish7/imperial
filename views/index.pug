@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  h1#title Metric-Imperial Converter
+
+  .usage
+      .front-end  
+              h2 How To Use
+              p Use this API to easily convert back and forth from
+              ul
+                li miles (mi) to kilometers (km)
+                li pounds (lb) to kilograms (kg)
+                li gallons (gl) to liters (Lt)
+
+      .enteries
+              .type-1
+                      form
+                        input(type="text" placeholder="2.3mi" name="input" required)#text
+                        button#convert(type="submit") Submit
+                      .show
+                          ul#output  
+      
+
+  -var api = "<code>/api/convert?input=[number][unit]</code>";
+  -var code = "<code>{"+"<br>" + " initNum: 3.1,"+"<br>" + " initUnit: 'mi',"+"<br>" + " returnNum: 4.98895,"+"<br>" + " returnUnit: 'km', "+"<br>" + " string: '3.1 miles converts to 4.98895 kilometers'"+"<br>" + "}</code>"
+  .example
+        h1 Example Output
+        p This API will respond to a GET request at !{api} with a JSON object like this example
+        pre !{code}
+        p    If the submitted quantity is invalid, the API will respond with "invalid number". If it's the unit that is invalid, the response will be "invalid unit". If both the quantity and unit are invalid, then the API will respond with "invalid number and unit". 
+        p    If a unit is submitted without a quantity, the API will assume a quantity of 1 should be converted.
+        h1 User Story
+        ol
+          li I will help prevent the client from trying to guess(sniff) the MIME type.
+          li I will prevent cross-site scripting (XSS) attacks.
+          li I can GET !{"<code>/api/convert</code>"} with a single parameter containing an accepted number and unit and have it converted.
+          li Hint: Split the input by looking for the index of the first character.
+          li I can convert 'gal' to 'L' and vice versa. !{"<b>(1 gal to 3.78541 L)</b>"}
+          li I can convert 'lbs' to 'kg' and vice versa. !{"<b>(1 lbs to 0.453592 kg)</b>"}
+          li I can convert 'mi' to 'km' and vice versa. !{"<b>(1 mi to 1.60934 km)</b>"}
+          li If my unit of measurement is invalid, returned will be 'invalid unit'.
+          li If my number is invalid, returned with will 'invalid number'.
+          li If both are invalid, return will be 'invalid number and unit'.
+          li I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+          li My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format !{"<code>{initNum} {initial_Units} converts to {returnNum} {return_Units}</code>"} with the result rounded to 5 decimals.
+          li All 16 unit tests are complete and passing.
+          li All 5 functional tests are complete and passing.
+
+  footer
+      h1 
+        a(href="https://github.com/imkrish7") By Krishna

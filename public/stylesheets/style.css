@@ -1,0 +1,86 @@
+body {
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #c93b34;
+  color: #fff;
+  box-sizing: border-box; }
+
+#title {
+  font-size: 50px;
+  text-align: center; }
+
+.usage {
+  display: flex;
+  margin: 50px; }
+
+.front-end {
+  margin: 30px;
+  padding: 20px;
+  font-size: 20px;
+  box-shadow: -8px -2px 16px 3px rgba(125, 45, 41, 0.8); }
+  .front-end ul {
+    list-style: none;
+    text-transform: capitalize; }
+
+.enteries {
+  display: grid;
+  margin: 80px;
+  box-shadow: -40px -28px 20px 0px rgba(125, 45, 41, 0.8), 38px 28px 20px 0px rgba(125, 45, 41, 0.8);
+  width: 500px;
+  height: 250px;
+  padding: 20px;
+  text-align: center; }
+  .enteries input {
+    height: 48px;
+    width: 300px;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    font-size: 20px;
+    color: #401e1e;
+    background: #fff; }
+  .enteries button {
+    height: 50px;
+    margin: 5px;
+    width: 100px;
+    background: #c93b34;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px;
+    text-transform: capitalize;
+    font-size: 20px; }
+
+.example {
+  width: 700px;
+  margin: auto;
+  box-shadow: -40px -28px 20px 0px rgba(125, 45, 41, 0.8), 38px 28px 20px 0px rgba(125, 45, 41, 0.8);
+  padding: 20px; }
+  .example p, .example ol, .example code {
+    font-size: 20px; }
+  .example code {
+    background: #8a8686;
+    padding: 3px; }
+  .example b {
+    color: #8a8686; }
+  .example pre {
+    box-sizing: border-box;
+    background: #8a8686;
+    font-size: 20px;
+    padding: 20px;
+    box-shadow: 0px 1px 16px 3px rgba(125, 45, 41, 0.8);
+    white-space: pre-wrap;
+    font-family: "Consolas", "Andale Mono WT", "Andale Mono", "Lucida Console"; }
+
+.show {
+  font-size: 20px; }
+  .show ul {
+    list-style: none;
+    text-align: left;
+    text-transform: capitalize; }
+
+footer {
+  text-align: center; }
+
+a {
+  color: #FFF; }
+
+/*# sourceMappingURL=style.css.map */
